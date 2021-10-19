@@ -31,15 +31,37 @@ class StatsServiceTest {
 
 
     @Test
-    void shouldMonthWithMinimalSales(){
+    void shouldMonthWithMaximalSales(){
         StatsService service = new StatsService();
 
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
-        int actual = service.shouldMonthWithMinimalSales(managerSales);
+        long actual = service.shouldMonthWithMaximalSales(managerSales);
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    void shouldMonthWithMinimalSales(){
+        StatsService service = new StatsService();
+
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 9;
+        long actual = service.shouldMonthWithMinimalSales(managerSales);
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void shouldBelowAverageSales(){
+        StatsService service = new StatsService();
+
+        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 9;
+        int actual = service.shouldBelowAverageSales(managerSales);
+        assertEquals(expected, actual);
+    }
+
 
 }
 
