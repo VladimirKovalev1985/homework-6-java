@@ -10,9 +10,9 @@ class StatsServiceTest {
     void shouldHowMuchDidYouSell() {
         StatsService service = new StatsService();
 
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
-        int actual = service.shouldHowMuchDidYouSell(managerSales);
+        long actual = service.HowMuchDidYouSell(managerSales);
         assertEquals(expected, actual);
 
     }
@@ -22,48 +22,61 @@ class StatsServiceTest {
     void shouldHowManySoldOnAverage() {
         StatsService service = new StatsService();
 
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = service.shouldHowManySoldOnAverage(managerSales);
+        long actual = service.HowManySoldOnAverage(managerSales);
         assertEquals(expected, actual);
 
     }
 
 
     @Test
-    void shouldMonthWithMaximalSales(){
+    void shouldMonthWithMaximalSales() {
         StatsService service = new StatsService();
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
-        long actual = service.shouldMonthWithMaximalSales(managerSales);
+        long actual = service.MonthWithMaximalSales(managerSales);
         assertEquals(expected, actual);
 
     }
 
     @Test
-    void shouldMonthWithMinimalSales(){
+    void shouldMonthWithMinimalSales() {
         StatsService service = new StatsService();
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
-        long actual = service.shouldMonthWithMinimalSales(managerSales);
+        long actual = service.MonthWithMinimalSales(managerSales);
         assertEquals(expected, actual);
 
     }
 
     @Test
-    void shouldBelowAverageSales(){
+    void shouldBelowAverageSales() {
         StatsService service = new StatsService();
 
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 9;
-        int actual = service.shouldBelowAverageSales(managerSales);
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 7;
+        long actual = service.BelowAverageSales(managerSales);
         assertEquals(expected, actual);
     }
 
 
+    @Test
+    void shouldAboveAverageSales() {
+        StatsService service = new StatsService();
+
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 7;
+        long actual = service.AboveAverageSales(managerSales);
+        assertEquals(expected, actual);
+
+    }
+
+
 }
+
 
 
 

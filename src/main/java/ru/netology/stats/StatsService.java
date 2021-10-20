@@ -2,24 +2,24 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int shouldHowMuchDidYouSell(int[] sales) {
-        int sum = 0;
-        for (int sale : sales) {
+    public long HowMuchDidYouSell(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
             sum = sum + sale;
         }
         return sum;
     }
 
-    public int shouldHowManySoldOnAverage(int[] sales) {
-        int sum = 0;
-        for (int sale : sales) {
+    public long HowManySoldOnAverage(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
             sum = sum + sale;
         }
-        int result = sum / 12;
+        long result = sum / 12;
         return result;
     }
 
-    public int shouldMonthWithMaximalSales(long[] sales) {
+    public long MonthWithMaximalSales(long[] sales) {
         int maxMonth = 0;
         int month = 0;
         for (long sale : sales) {
@@ -34,7 +34,7 @@ public class StatsService {
 
     }
 
-    public int shouldMonthWithMinimalSales(long[] sales) {
+    public long MonthWithMinimalSales(long[] sales) {
         int minMonth = 0;
         int month = 0;
         for (long sale : sales) {
@@ -50,29 +50,32 @@ public class StatsService {
 
     }
 
-    public int shouldBelowAverageSales(int[] sales) {
-        return shouldHowMuchDidYouSell(sales) / sales.length;
-        int monthAVG = 0;
-        for (int sale : sales){
-            if(sale <= i){
-                monthAVG++;
+    public long BelowAverageSales(long[] sales) {
+        long monthAVG = HowMuchDidYouSell(sales) / sales.length;
+        long monthBlwAVG = 0;
+        for (long sale : sales) {
+            if (sale <= monthAVG) {
+                monthBlwAVG++;
+
+            }
+
 
         }
-            return monthAVG;
+        return monthBlwAVG;
 
+    }
+
+    public long AboveAverageSales(long[] sales) {
+        long monthAVG = HowMuchDidYouSell(sales) / sales.length;
+        long monthAbvAVG = 0;
+        for (long sale : sales) {
+            if (sale >= monthAVG) {
+                monthAbvAVG++;
+
+            }
         }
-
-
-
-
-
- }
-
-
-
-
-
-
+        return monthAbvAVG;
+    }
 
 
 }
