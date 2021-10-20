@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public long HowMuchDidYouSell(long[] sales) {
+    public long howMuchDidYouSell(long[] sales) {
         long sum = 0;
         for (long sale : sales) {
             sum = sum + sale;
@@ -10,7 +10,7 @@ public class StatsService {
         return sum;
     }
 
-    public long HowManySoldOnAverage(long[] sales) {
+    public long howManySoldOnAverage(long[] sales) {
         long sum = 0;
         for (long sale : sales) {
             sum = sum + sale;
@@ -19,7 +19,7 @@ public class StatsService {
         return result;
     }
 
-    public long MonthWithMaximalSales(long[] sales) {
+    public long monthWithMaximalSales(long[] sales) {
         int maxMonth = 0;
         int month = 0;
         for (long sale : sales) {
@@ -34,7 +34,7 @@ public class StatsService {
 
     }
 
-    public long MonthWithMinimalSales(long[] sales) {
+    public long monthWithMinimalSales(long[] sales) {
         int minMonth = 0;
         int month = 0;
         for (long sale : sales) {
@@ -50,8 +50,8 @@ public class StatsService {
 
     }
 
-    public long BelowAverageSales(long[] sales) {
-        long monthAVG = HowMuchDidYouSell(sales) / sales.length;
+    public long belowAverageSales(long[] sales) {
+        long monthAVG = howMuchDidYouSell(sales) / sales.length;
         long monthBlwAVG = 0;
         for (long sale : sales) {
             if (sale <= monthAVG) {
@@ -65,8 +65,8 @@ public class StatsService {
 
     }
 
-    public long AboveAverageSales(long[] sales) {
-        long monthAVG = HowMuchDidYouSell(sales) / sales.length;
+    public long aboveAverageSales(long[] sales) {
+        long monthAVG = howMuchDidYouSell(sales) / sales.length;
         long monthAbvAVG = 0;
         for (long sale : sales) {
             if (sale >= monthAVG) {

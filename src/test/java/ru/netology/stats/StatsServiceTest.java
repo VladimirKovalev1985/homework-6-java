@@ -12,7 +12,7 @@ class StatsServiceTest {
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
-        long actual = service.HowMuchDidYouSell(managerSales);
+        long actual = service.howMuchDidYouSell(managerSales);
         assertEquals(expected, actual);
 
     }
@@ -24,7 +24,7 @@ class StatsServiceTest {
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        long actual = service.HowManySoldOnAverage(managerSales);
+        long actual = service.howManySoldOnAverage(managerSales);
         assertEquals(expected, actual);
 
     }
@@ -36,7 +36,7 @@ class StatsServiceTest {
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
-        long actual = service.MonthWithMaximalSales(managerSales);
+        long actual = service.monthWithMaximalSales(managerSales);
         assertEquals(expected, actual);
 
     }
@@ -47,7 +47,7 @@ class StatsServiceTest {
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
-        long actual = service.MonthWithMinimalSales(managerSales);
+        long actual = service.monthWithMinimalSales(managerSales);
         assertEquals(expected, actual);
 
     }
@@ -58,7 +58,7 @@ class StatsServiceTest {
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 7;
-        long actual = service.BelowAverageSales(managerSales);
+        long actual = service.belowAverageSales(managerSales);
         assertEquals(expected, actual);
     }
 
@@ -69,7 +69,7 @@ class StatsServiceTest {
 
         long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 7;
-        long actual = service.AboveAverageSales(managerSales);
+        long actual = service.aboveAverageSales(managerSales);
         assertEquals(expected, actual);
 
     }
